@@ -16,7 +16,7 @@
 
 # cpulimit的用法:
 编译cpulimit.c这个死循环程序，gcc cpulimit.c，运行之./a.out，通过pidof a.out命令获得它的pid，然后开一个terminal观察top，发现a.out这个进程的CPU利用率接近100%，之后通过cpulimit控制它的CPU利用率，再看top
-* cpulimit -l 20 -p <pid>
-* cpulimit -l 30 -p <pid>
+* cpulimit -l 20 -p  a.out的pid
+* cpulimit -l 30 -p  a.out的pid
 ...
  
