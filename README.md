@@ -11,55 +11,55 @@
 
 # 第一部分大纲
 
-Linux进程生命周期(就绪、运行、睡眠、停止、僵死)
-僵尸是个什么鬼？
-停止状态与作业控制，cpulimit
-内存泄漏的真实含义
-task_struct以及task_struct之间的关系
-初见fork和僵尸
+* Linux进程生命周期(就绪、运行、睡眠、停止、僵死)
+* 僵尸是个什么鬼？
+* 停止状态与作业控制，cpulimit
+* 内存泄漏的真实含义
+* task_struct以及task_struct之间的关系
+* 初见fork和僵尸
 练习题
-fork的例子
-life-period例子，观察僵尸
-用cpulimit控制CPU利用率
+* fork的例子
+* life-period例子，观察僵尸
+* 用cpulimit控制CPU利用率
  
 
 # 第二部分大纲
 
-fork、vfork、clone
-写时拷贝技术
-Linux线程的实现本质
-进程0和进程1
-进程的睡眠和等待队列
-孤儿进程的托孤，SUBREAPER
+* fork、vfork、clone
+* 写时拷贝技术
+* Linux线程的实现本质
+* 进程0和进程1
+* 进程的睡眠和等待队列
+* 孤儿进程的托孤，SUBREAPER
 练习题
-fork、vfork、Copy-on-Write例子
-life-period例子，实验体会托孤
-pthread_create例子，strace它
-彻底看懂等待队列的案例
+* fork、vfork、Copy-on-Write例子
+* life-period例子，实验体会托孤
+* pthread_create例子，strace它
+* 彻底看懂等待队列的案例
 
 # 第三部分大纲
 
-1. CPU/IO消耗型进程
-2. 吞吐率 vs. 响应
-3. SCHED_FIFO、SCHED_RR
-4. SCHED_NORMAL和CFS
-5. nice、renice
-6. chrt
+* CPU/IO消耗型进程
+* 吞吐率 vs. 响应
+* SCHED_FIFO、SCHED_RR
+* SCHED_NORMAL和CFS
+* nice、renice
+* chrt
 练习题
-运行2个高CPU利用率程序，调整他们的nice
-用chrt把一个死循环程序调整为SCHED_FIFO
-阅读ARM的big.LITTLE架构资料，并论述为什么ARM要这么做？
+* 运行2个高CPU利用率程序，调整他们的nice
+* 用chrt把一个死循环程序调整为SCHED_FIFO
+* 阅读ARM的big.LITTLE架构资料，并论述为什么ARM要这么做？
 
 # 第四部分大纲
 
-多核下负载均衡
-中断负载均衡、RPS软中断负载均衡
-cgroups和CPU资源分群分配
-Android和NEON对cgroups的采用
-Linux为什么不是硬实时的
-preempt-rt对Linux实时性的改造
+* 多核下负载均衡
+* 中断负载均衡、RPS软中断负载均衡
+* cgroups和CPU资源分群分配
+* Android和NEON对cgroups的采用
+* Linux为什么不是硬实时的
+* preempt-rt对Linux实时性的改造
 练习题
-用time命令跑1个含有2个死循环线程的进程
-用taskset调整多线程依附的CPU
-创建和分群CPU的cgroup，调整权重和quota
-cyclictest
+* 用time命令跑1个含有2个死循环线程的进程
+* 用taskset调整多线程依附的CPU
+* 创建和分群CPU的cgroup，调整权重和quota
+* cyclictest
