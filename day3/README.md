@@ -31,11 +31,3 @@
         chrt -f -a -p 50 进程PID
 * 再观察它的CPU利用率
 
-# 3.编译two-loops.c, gcc two-loops.c -pthread，运行一份
-* top发现其CPU利用率接近200%
-* 把它的所有线程affinity设置为01, 02, 03后分辨来看看CPU利用率
-
-        taskset -a -p 02 进程PID
-        taskset -a -p 01 进程PID
-        taskset -a -p 03 进程PID
-* 前两次设置后，a.out CPU利用率应该接近100%，最后一次接近200%
