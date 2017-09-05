@@ -21,3 +21,11 @@
           PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
         13682 baohua    15  -5   18684    616    552 S 147.4  0.0   4:52.73 a.out
         13685 baohua    20   0   18684    644    580 S  48.6  0.0   4:12.77 a.out
+
+### killall a.out
+
+# 编译two-loops.c, gcc two-loops.c -pthread，运行一份
+* top发现其CPU利用率接近200%
+* 把它的所有线程设置为SCHED_FIFO
+        chrt -f -a -p 50 进程PID
+* 再观察它的CPU利用率
