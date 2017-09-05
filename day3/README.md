@@ -27,5 +27,6 @@
 # 编译two-loops.c, gcc two-loops.c -pthread，运行一份
 * top发现其CPU利用率接近200%
 * 把它的所有线程设置为SCHED_FIFO
+
         chrt -f -a -p 50 进程PID
 * 再观察它的CPU利用率
