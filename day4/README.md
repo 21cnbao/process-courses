@@ -18,3 +18,10 @@
         taskset -a -p 01 进程PID
         taskset -a -p 03 进程PID
 * 前两次设置后，a.out CPU利用率应该接近100%，最后一次接近200%
+
+# 3.编译two-loops.c, gcc two-loops.c -pthread，运行三份
+
+
+# 4.cyclictest -p 99 -t1 -n
+* 观察min, max, act, avg时间，分析hard realtime问题
+* 加到系统负载，运行一些硬盘访问，狂收发包的程序，观察cyclictest的max变化
