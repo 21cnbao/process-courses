@@ -18,6 +18,6 @@
 ### renice其中之一，再观察CPU利用率
         sudo renice -n -5 -g 13682
 
-          PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                        
+          PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
         13682 baohua    15  -5   18684    616    552 S 147.4  0.0   4:52.73 a.out
-        13685 baohua    20   0   18684    644    580 S  48.6  0.0   4:12.77 a.out 
+        13685 baohua    20   0   18684    644    580 S  48.6  0.0   4:12.77 a.out
