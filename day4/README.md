@@ -30,8 +30,10 @@
         baohua@baohua-VirtualBox:/sys/fs/cgroup/cpu/A$ cd ..
         baohua@baohua-VirtualBox:/sys/fs/cgroup/cpu$ cd B/
         baohua@baohua-VirtualBox:/sys/fs/cgroup/cpu/B$ sudo sh -c 'echo 15001 > cgroup.procs'
+
 * 这次发现3个a.out的CPU利用率大概是50%, 50%, 100%。
 * 杀掉第2个和第3个a.out，然后调整cgroup A的quota，观察14995的CPU利用率变化
+
         baohua@baohua-VirtualBox:/sys/fs/cgroup/cpu/B$ kill 14998
         baohua@baohua-VirtualBox:/sys/fs/cgroup/cpu/B$ kill 15001
 * 设置A group的quota为20ms：
