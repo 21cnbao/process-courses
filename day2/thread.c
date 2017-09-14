@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <pthread.h>
-#include <sys/types.h>
+#include <stdio.h>
+#include <linux/unistd.h>
+#include <sys/syscall.h>
 
-struct thread_param {
-	char info;
-	int num;
-};
-
-void *thread_fun(void *param)
+static pid_t gettid( void )
 {
-	printf("thread pid:%d, tid:%lu\n", getpid(), pthread_self());
+	return syscall(__NR_gettid);
+}
+
+static void *thread_fun(void *param)
+{
+	printf("thread pid:%d, tid:%d pthread_self:%lu\n", getpid(), gettid(),pthread_self());
 	return NULL;
 }
 
@@ -18,7 +20,7 @@ int main(void)
 	pthread_t tid;
 	int ret;
 
-	printf("main pid:%d, tid:%lu\n", getpid(), pthread_self());
+	printf("thread pid:%d, tid:%d pthread_self:%lu\n", getpid(), gettid(),pthread_self());
 
 	ret = pthread_create(&tid, NULL, thread_fun, NULL);
 	if (ret == -1) {
